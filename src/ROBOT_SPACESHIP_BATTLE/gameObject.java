@@ -12,11 +12,12 @@ public class gameObject {
 	}
 	
 	void update(){
-		x+=50;
+		
 		
 		
 	}
 	void draw(Graphics g){
-		g.fillRect(x, y, 100, 100);
+		g.drawImage(GamePanel.rocketImg, x, y, width, height, null);
+
 	}
 }
