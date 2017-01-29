@@ -16,11 +16,19 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 	Timer timer;
 	gameObject gameObject;
 	PL1 pl1;
+	Planet1 planet1;
+	PL2 pl2;
+	Planet2 planet2;
 	public static BufferedImage rocketImg;
 	public GamePanel() {
 		gameObject = new gameObject();
 		timer = new Timer(1000/60, this);
-		pl1 = new PL1(50, 50,50, 50);
+		
+		pl1 = new PL1(110, 50,50, 50,1);
+		planet1 = new Planet1(50,50,50,50,2);
+		pl2= new PL2(1660,800,50,50,3);
+		planet2=new Planet2(1760,800,50,50,4);
+		
 		try {
 			
 			rocketImg = ImageIO.read(this.getClass().getResourceAsStream("HYPEROCKET0.png"));
@@ -39,25 +47,28 @@ public void paintComponent(Graphics g){
 	           
 	gameObject.draw(g);
 	pl1.draw(g);
+	planet1.draw(g);
+	pl2.draw(g);
+	planet2.draw(g);
 	repaint();
 	
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
+		
 		gameObject.update();
 		pl1.update();
 	}
 	@Override
 	public void keyTyped(KeyEvent e) {
-		// TODO Auto-generated method stub
+		
 		System.out.println("typed");
 		
 	}
 	@Override
 	public void keyPressed(KeyEvent e) {
-		// TODO Auto-generated method stub
+		
 		System.out.println("Pressed");
 		System.out.println(e.getKeyCode());
 		if (e.getKeyCode()== KeyEvent.VK_RIGHT){
@@ -81,7 +92,7 @@ public void paintComponent(Graphics g){
 	}
 	@Override
 	public void keyReleased(KeyEvent e) {
-		// TODO Auto-generated method stub
+		
 		System.out.println("Released");
 	}
 	

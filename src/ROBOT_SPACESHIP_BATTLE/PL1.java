@@ -6,11 +6,12 @@ public class PL1 extends gameObject {
 	public static boolean left = false;
 	public static boolean up = false; 
 	public static boolean down =false;
-	public PL1(int x, int y, int width, int height) {
+	public PL1(int x, int y, int width, int height, int img) {
 		this.x= x;
 		this.y = y;
 		this.width = width;
 		this.height = height;
+		this.img = img;
 	}
 	@Override
 	void update() {

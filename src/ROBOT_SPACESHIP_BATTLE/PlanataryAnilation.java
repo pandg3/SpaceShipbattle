@@ -4,17 +4,17 @@ import java.awt.event.KeyListener;
 
 import javax.swing.JFrame;
 
-public class Robot_Battle{
-	static Robot_Battle RO;  
-	static final int gWidth = 1000;
-	static final int gHight = 1300;
+public class PlanataryAnilation{
+	static PlanataryAnilation RO;  
+	static final int gWidth = 1910;
+	static final int gHight = 950;
 	GamePanel gPanel;
 	JFrame main;
 	public static void main(String[] args) {
-		Robot_Battle RO = new Robot_Battle();
+		PlanataryAnilation RO = new PlanataryAnilation();
 		RO.setup();
 	}
-	public Robot_Battle() {
+	public PlanataryAnilation() {
 		main = new JFrame();
 		
 		gPanel = new GamePanel();

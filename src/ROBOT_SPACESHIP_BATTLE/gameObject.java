@@ -1,5 +1,6 @@
 package ROBOT_SPACESHIP_BATTLE;
 
+import java.awt.Color;
 import java.awt.Graphics;
 
 public class gameObject {
@@ -7,6 +8,7 @@ public class gameObject {
 	int y;
 	int width;
 	int height;
+	int img;
 	public gameObject() {
 	
 	}
@@ -17,7 +19,24 @@ public class gameObject {
 		
 	}
 	void draw(Graphics g){
-		g.drawImage(GamePanel.rocketImg, x, y, width, height, null);
+		if (img  == 1){
+			g.drawImage(GamePanel.rocketImg, x, y, width, height, null);
+		}
+		else if (img == 2){
+			g.setColor(Color.blue.BLUE);
+			g.fillRect(x, y, width, height);
+			
+		}
+		else if (img ==3){
+			g.setColor(Color.orange.ORANGE);
+			g.fillRect(x, y, width, height);
+		}
+		else if (img ==4){
+			g.setColor(Color.red.RED);
+			g.fillRect(x, y, width, height);
+		}
+		
+		
 
 	}
 }
