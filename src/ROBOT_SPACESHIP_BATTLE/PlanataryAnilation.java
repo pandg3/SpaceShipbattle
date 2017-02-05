@@ -26,8 +26,7 @@ public class PlanataryAnilation {
 		main.addKeyListener(gPanel);
 		main.add(gPanel);
 		main.setVisible(true);
-		gui.menu.setVisible(true);
-		main.add(gui.menu);
+
 		main.setSize(gWidth, gHight);
 		main.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		gPanel.startGame();

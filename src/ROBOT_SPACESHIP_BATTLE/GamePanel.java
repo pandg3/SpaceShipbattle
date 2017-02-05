@@ -18,6 +18,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 	final int END_STATE = 2;
 	int currentState;
 	Timer timer;
+
 	gameObject gameObject;
 	PL1 pl1;
 	Planet1 planet1;
