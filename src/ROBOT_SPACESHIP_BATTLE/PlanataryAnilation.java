@@ -1,11 +1,14 @@
 package ROBOT_SPACESHIP_BATTLE;
 
+import java.awt.event.MouseListener;
+
 import javax.swing.JFrame;
 
 public class PlanataryAnilation {
 	static PlanataryAnilation RO;
 	static final int gWidth = 1910;
 	static final int gHight = 950;
+	MouseListener mListner;
 	GamePanel gPanel;
 	JFrame main;
 	Gui gui = new Gui();
@@ -24,6 +27,7 @@ public class PlanataryAnilation {
 
 	void setup() {
 		main.addKeyListener(gPanel);
+		main.addMouseListener(gPanel);
 		main.add(gPanel);
 		main.setVisible(true);
 
