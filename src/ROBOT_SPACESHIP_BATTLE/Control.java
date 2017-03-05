@@ -10,7 +10,7 @@ import java.awt.event.MouseListener;
 import javax.swing.Timer;
 
 public class Control implements ActionListener, KeyListener, MouseListener {
-
+	Movement_Dots moveDots;
 	PL1 pl1;
 	Planet1 planet1;
 	gameObject gameObject;
@@ -20,12 +20,14 @@ public class Control implements ActionListener, KeyListener, MouseListener {
 
 		gameObject.update();
 		pl1.update();
+		moveDots.update();
 	}
 
 	public Control(GamePanel gPanel) {
 		timer = new Timer(1000 / 60, this);
 		pl1 = gPanel.getPl1();
 		gameObject = gPanel.getGameObject();
+		moveDots = gPanel.getmoveDots();
 	}
 
 	void startGame() {
@@ -68,8 +70,10 @@ public class Control implements ActionListener, KeyListener, MouseListener {
 		// TODO Auto-generated method stub
 		System.out.println("Clicked!");
 
-		pl1.x = e.getX();
-		pl1.y = e.getY();
+		pl1.x = (e.getX() / 50) * 50;
+		pl1.y = (e.getY() / 50) * 50;
+		moveDots.x = (e.getX() / 50) * 50;
+		moveDots.y = (e.getY() / 50) * 50;
 	}
 
 	@Override

@@ -20,17 +20,18 @@ public class GamePanel extends JPanel {
 	Planet2 planet2;
 	GamePanel gamepanel;
 	Grid grid;
+	Movement_Dots moveDots;
 	public static BufferedImage rocketImg;
 
 	public GamePanel() {
 
 		gameObject = new gameObject();
 
-		pl1 = new PL1(110, 50, 50, 50, 1);
+		pl1 = new PL1(150, 50, 50, 50, 1);
 		planet1 = new Planet1(50, 50, 50, 50, 2);
-		pl2 = new PL2(1660, 800, 50, 50, 3);
-		planet2 = new Planet2(1760, 800, 50, 50, 4);
-
+		pl2 = new PL2(1650, 800, 50, 50, 3);
+		planet2 = new Planet2(1750, 800, 50, 50, 4);
+		moveDots = new Movement_Dots(150, 50, 50, 50, 6);
 		grid = new Grid(0, 0, 50, 50, 5);
 
 		try {
@@ -42,6 +43,10 @@ public class GamePanel extends JPanel {
 			e.printStackTrace();
 		}
 
+	}
+
+	public Movement_Dots getmoveDots() {
+		return moveDots;
 	}
 
 	public PL1 getPl1() {
@@ -60,6 +65,7 @@ public class GamePanel extends JPanel {
 		pl2.draw(g);
 		planet2.draw(g);
 		grid.draw(g);
+		moveDots.draw(g);
 		repaint();
 
 	}

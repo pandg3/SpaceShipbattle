@@ -4,8 +4,8 @@ import javax.swing.JFrame;
 
 public class PlanataryAnilation {
 	static PlanataryAnilation RO;
-	static final int gWidth = 1910;
-	static final int gHight = 950;
+	static final int gWidth = 1900;
+	static final int gHight = 925;
 
 	GamePanel gPanel;
 	JFrame main;

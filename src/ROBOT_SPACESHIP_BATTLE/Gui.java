@@ -12,7 +12,7 @@ public class Gui extends GamePanel {
 	public Gui() {
 		menu.add(Start);
 		menu.setBounds(755, 0, 200, 950);
-		Start.setBounds(955, 400, 100, 50);
+		Start.setBounds(950, 400, 100, 50);
 		menu.setBackground(Color.BLUE.blue);
 
 	}
