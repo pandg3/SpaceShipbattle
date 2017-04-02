@@ -71,7 +71,7 @@ public class Control implements ActionListener, KeyListener, MouseListener {
 		// TODO Auto-generated method stub
 		System.out.println("Clicked!");
 		if (e.getX() > (gpanel.randx / 50) * 50 && e.getX() < ((gpanel.randx / 50) * 50) + 50 && e.getY() > (gpanel.randy / 50) * 50
-				&& e.getY() > ((gpanel.randy / 50) * 50) + 50) {
+				&& e.getY() < ((gpanel.randy / 50) * 50) + 50) {
 			System.out.println("AstroidClick");
 		}
 		pl1.x = (e.getX() / 50) * 50;
