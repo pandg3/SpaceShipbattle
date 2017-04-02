@@ -9,7 +9,7 @@ public class PlanataryAnilation {
 
 	GamePanel gPanel;
 	JFrame main;
-	Gui gui = new Gui();
+
 	Control control;
 
 	public static void main(String[] args) {

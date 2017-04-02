@@ -64,6 +64,10 @@ public class gameObject {
 				int yM1 = l * 50;
 				yM = y + yM1;
 			}
+
+		} else if (img == 7) {
+			g.setColor(Color.YELLOW);
+			g.fillRect(x, y, width, height);
 		}
 	}
 

@@ -15,6 +15,7 @@ public class Control implements ActionListener, KeyListener, MouseListener {
 	Planet1 planet1;
 	gameObject gameObject;
 	Timer timer;
+	GamePanel gpanel = new GamePanel();
 
 	public void actionPerformed(ActionEvent e) {
 
@@ -69,7 +70,10 @@ public class Control implements ActionListener, KeyListener, MouseListener {
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
 		System.out.println("Clicked!");
-
+		if (e.getX() > (gpanel.randx / 50) * 50 && e.getX() < ((gpanel.randx / 50) * 50) + 50 && e.getY() > (gpanel.randy / 50) * 50
+				&& e.getY() > ((gpanel.randy / 50) * 50) + 50) {
+			System.out.println("AstroidClick");
+		}
 		pl1.x = (e.getX() / 50) * 50;
 		pl1.y = (e.getY() / 50) * 50;
 		moveDots.x = (e.getX() / 50) * 50;

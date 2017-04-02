@@ -3,6 +3,7 @@ package ROBOT_SPACESHIP_BATTLE;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.util.Random;
 
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
@@ -21,10 +22,15 @@ public class GamePanel extends JPanel {
 	GamePanel gamepanel;
 	Grid grid;
 	Movement_Dots moveDots;
+	astroidGen astroid;
 	public static BufferedImage rocketImg;
 
-	public GamePanel() {
+	int randx = new Random().nextInt(1850);
+	int randy = new Random().nextInt(825);
 
+	public GamePanel() {
+		System.out.println((randx / 50) * 50);
+		System.out.println((randy / 50) * 50);
 		gameObject = new gameObject();
 
 		pl1 = new PL1(150, 50, 50, 50, 1);
@@ -33,7 +39,7 @@ public class GamePanel extends JPanel {
 		planet2 = new Planet2(1750, 800, 50, 50, 4);
 		moveDots = new Movement_Dots(150, 50, 50, 50, 6);
 		grid = new Grid(0, 0, 50, 50, 5);
-
+		astroid = new astroidGen((randx / 50) * 50, (randy / 50) * 50, 50, 50, 7);
 		try {
 
 			rocketImg = ImageIO.read(this.getClass().getResourceAsStream("HYPEROCKET0.png"));
@@ -66,6 +72,7 @@ public class GamePanel extends JPanel {
 		planet2.draw(g);
 		grid.draw(g);
 		moveDots.draw(g);
+		astroid.draw(g);
 		repaint();
 
 	}
