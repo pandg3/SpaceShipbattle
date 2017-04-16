@@ -69,6 +69,10 @@ public class gameObject {
 			g.setColor(Color.YELLOW);
 			g.fillRect(x, y, width, height);
 		}
+		else if (img == 8){
+			g.setColor(Color.GRAY);
+			g.fillRect(x, y, width, height);
+		}
 	}
 
 }

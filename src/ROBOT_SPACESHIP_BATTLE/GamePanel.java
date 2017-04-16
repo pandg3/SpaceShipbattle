@@ -23,16 +23,17 @@ public class GamePanel extends JPanel {
 	Grid grid;
 	Movement_Dots moveDots;
 	astroidGen astroid;
+	Selection_box select;
 	public static BufferedImage rocketImg;
 
-	int randx = new Random().nextInt(1850);
-	int randy = new Random().nextInt(825);
+	static int randx = new Random().nextInt(1850);
+	static int randy = new Random().nextInt(825);
 
 	public GamePanel() {
 		System.out.println((randx / 50) * 50);
 		System.out.println((randy / 50) * 50);
 		gameObject = new gameObject();
-
+		
 		pl1 = new PL1(150, 50, 50, 50, 1);
 		planet1 = new Planet1(50, 50, 50, 50, 2);
 		pl2 = new PL2(1650, 800, 50, 50, 3);
@@ -40,12 +41,13 @@ public class GamePanel extends JPanel {
 		moveDots = new Movement_Dots(150, 50, 50, 50, 6);
 		grid = new Grid(0, 0, 50, 50, 5);
 		astroid = new astroidGen((randx / 50) * 50, (randy / 50) * 50, 50, 50, 7);
+		select = new Selection_box(Control.getmouseX() , , 50, 50, 8);
 		try {
 
 			rocketImg = ImageIO.read(this.getClass().getResourceAsStream("HYPEROCKET0.png"));
 
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 
@@ -73,6 +75,7 @@ public class GamePanel extends JPanel {
 		grid.draw(g);
 		moveDots.draw(g);
 		astroid.draw(g);
+		select.draw(g);
 		repaint();
 
 	}
