@@ -13,7 +13,7 @@ public class GamePanel extends JPanel {
 	final int GAME_STATE = 1;
 	final int END_STATE = 2;
 	int currentState;
-
+	Control control;
 	gameObject gameObject;
 	PL1 pl1;
 	Planet1 planet1;
@@ -29,11 +29,11 @@ public class GamePanel extends JPanel {
 	static int randx = new Random().nextInt(1850);
 	static int randy = new Random().nextInt(825);
 
-	public GamePanel() {
+	public GamePanel(Control control) {
 		System.out.println((randx / 50) * 50);
 		System.out.println((randy / 50) * 50);
 		gameObject = new gameObject();
-		
+		this.control = control;
 		pl1 = new PL1(150, 50, 50, 50, 1);
 		planet1 = new Planet1(50, 50, 50, 50, 2);
 		pl2 = new PL2(1650, 800, 50, 50, 3);
@@ -41,13 +41,13 @@ public class GamePanel extends JPanel {
 		moveDots = new Movement_Dots(150, 50, 50, 50, 6);
 		grid = new Grid(0, 0, 50, 50, 5);
 		astroid = new astroidGen((randx / 50) * 50, (randy / 50) * 50, 50, 50, 7);
-		select = new Selection_box(Control.getmouseX() , , 50, 50, 8);
+		select = new Selection_box(control.getmouseX(), control.mouseY, 50, 50, 8);
 		try {
 
 			rocketImg = ImageIO.read(this.getClass().getResourceAsStream("HYPEROCKET0.png"));
 
 		} catch (IOException e) {
-			
+
 			e.printStackTrace();
 		}
 

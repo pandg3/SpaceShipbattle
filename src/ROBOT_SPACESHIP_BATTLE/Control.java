@@ -25,15 +25,15 @@ public class Control implements ActionListener, KeyListener, MouseListener {
 		moveDots.update();
 	}
 
-	public Control(GamePanel gPanel) {
+	public Control() {
 		timer = new Timer(1000 / 60, this);
+	}
+
+	void startGame(GamePanel gPanel) {
+		timer.start();
 		pl1 = gPanel.getPl1();
 		gameObject = gPanel.getGameObject();
 		moveDots = gPanel.getmoveDots();
-	}
-
-	void startGame() {
-		timer.start();
 
 	}
 
@@ -49,7 +49,8 @@ public class Control implements ActionListener, KeyListener, MouseListener {
 
 		System.out.println("Pressed");
 		/*
-		 * System.out.println(e.getKeyCode()); if (e.getKeyCode() == KeyEvent.VK_RIGHT) { PL1.right = true;
+		 * System.out.println(e.getKeyCode()); if (e.getKeyCode() ==
+		 * KeyEvent.VK_RIGHT) { PL1.right = true;
 		 * 
 		 * } if (e.getKeyCode() == KeyEvent.VK_LEFT) { PL1.left = true;
 		 * 
@@ -60,26 +61,27 @@ public class Control implements ActionListener, KeyListener, MouseListener {
 		 * }
 		 */
 	}
-	public int getmouseX(){
+
+	public int getmouseX() {
 		return mouseX;
 	}
-	
+
 	@Override
 	public void keyReleased(KeyEvent e) {
 
 		System.out.println("Released");
 	}
-	
+
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
 		mouseX = e.getX();
 		mouseY = e.getY();
 		System.out.println("Click X = " + e.getX() + " Click Y = " + e.getY());
-		System.out.println("RandomX = " + GamePanel.randx+ " RandomY = " + GamePanel.randy);
-		
-		if (e.getX() > (GamePanel.randx / 50) * 50 && e.getX() < ((GamePanel.randx / 50) * 50) + 50 && e.getY() > (GamePanel.randy / 50) * 50
-				&& e.getY() < ((GamePanel.randy / 50) * 50) + 50) {
+		System.out.println("RandomX = " + GamePanel.randx + " RandomY = " + GamePanel.randy);
+
+		if (e.getX() > (GamePanel.randx / 50) * 50 && e.getX() < ((GamePanel.randx / 50) * 50) + 50
+				&& e.getY() > (GamePanel.randy / 50) * 50 && e.getY() < ((GamePanel.randy / 50) * 50) + 50) {
 			System.out.println("AstroidClick");
 		}
 		pl1.x = (e.getX() / 50) * 50;

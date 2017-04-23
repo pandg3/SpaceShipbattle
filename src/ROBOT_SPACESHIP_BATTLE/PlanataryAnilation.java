@@ -19,9 +19,9 @@ public class PlanataryAnilation {
 
 	public PlanataryAnilation() {
 		main = new JFrame();
+		control = new Control();
+		gPanel = new GamePanel(control);
 
-		gPanel = new GamePanel();
-		control = new Control(gPanel);
 		setup();
 	}
 
@@ -33,7 +33,7 @@ public class PlanataryAnilation {
 
 		main.setSize(gWidth, gHight);
 		main.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		control.startGame();
+		control.startGame(gPanel);
 
 	}
 }
