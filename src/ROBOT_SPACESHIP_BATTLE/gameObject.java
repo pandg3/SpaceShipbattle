@@ -2,6 +2,7 @@ package ROBOT_SPACESHIP_BATTLE;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.util.ArrayList;
 
 public class gameObject {
 	int x;
@@ -13,10 +14,16 @@ public class gameObject {
 	int yG = 0;
 	int xM;
 	int yM;
+	ArrayList<Integer> xcords = new ArrayList<Integer>();
+	ArrayList<Integer> ycords = new ArrayList<Integer>();
 
 	public gameObject() {
 
 	}
+
+	// public ArrayList<Integer> getarray() {
+	// return xcords;
+	// }
 
 	void update() {
 
@@ -56,20 +63,29 @@ public class gameObject {
 			g.setColor(Color.blue.brighter());
 			for (int k = 0; k < 5; k++) {
 				g.drawOval(xM, y, width, height);
+				xcords.add(xM);
+				System.out.println(xcords.get(k));
 				int xM1 = k * 50;
 				xM = x + xM1;
+
 			}
 			for (int l = 0; l < 5; l++) {
 				g.drawOval(x, yM, width, height);
 				int yM1 = l * 50;
 				yM = y + yM1;
 			}
+			for (int m = 0; m < 5; m++) {
+				g.drawOval(xM, yM, width, height);
+				int xM1 = m * 50;
+				int yM1 = m * 50;
+				xM = x + xM1;
+				yM = y + yM1;
+			}
 
 		} else if (img == 7) {
 			g.setColor(Color.YELLOW);
 			g.fillRect(x, y, width, height);
-		}
-		else if (img == 8){
+		} else if (img == 8) {
 			g.setColor(Color.GRAY);
 			g.fillRect(x, y, width, height);
 		}

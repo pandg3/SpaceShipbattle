@@ -74,6 +74,7 @@ public class Control implements ActionListener, KeyListener, MouseListener {
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
+
 		// TODO Auto-generated method stub
 		mouseX = e.getX();
 		mouseY = e.getY();
@@ -88,6 +89,9 @@ public class Control implements ActionListener, KeyListener, MouseListener {
 		pl1.y = (e.getY() / 50) * 50;
 		moveDots.x = (e.getX() / 50) * 50;
 		moveDots.y = (e.getY() / 50) * 50;
+		for (int i = 0; i < 5; i++) {
+			// System.out.println(gameObject.xcords.get(i));
+		}
 	}
 
 	@Override
