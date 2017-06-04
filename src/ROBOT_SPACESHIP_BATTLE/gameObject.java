@@ -47,6 +47,7 @@ public class gameObject {
 		}
 
 		else if (img == 5) {
+			//grid draw
 			g.setColor(Color.black.BLACK);
 
 			for (int j = 0; j < 18; j++) {
@@ -63,8 +64,7 @@ public class gameObject {
 			g.setColor(Color.blue.brighter());
 			for (int k = 0; k < 5; k++) {
 				g.drawOval(xM, y, width, height);
-				xcords.add(xM);
-				System.out.println(xcords.get(k));
+				
 				int xM1 = k * 50;
 				xM = x + xM1;
 

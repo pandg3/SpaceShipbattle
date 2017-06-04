@@ -76,19 +76,8 @@ public class Control implements ActionListener, KeyListener, MouseListener {
 	public void mouseClicked(MouseEvent e) {
 
 		// TODO Auto-generated method stub
-		mouseX = e.getX();
-		mouseY = e.getY();
-		System.out.println("Click X = " + e.getX() + " Click Y = " + e.getY());
-		System.out.println("RandomX = " + GamePanel.randx + " RandomY = " + GamePanel.randy);
-
-		if (e.getX() > (GamePanel.randx / 50) * 50 && e.getX() < ((GamePanel.randx / 50) * 50) + 50
-				&& e.getY() > (GamePanel.randy / 50) * 50 && e.getY() < ((GamePanel.randy / 50) * 50) + 50) {
-			System.out.println("AstroidClick");
-		}
-		pl1.x = (e.getX() / 50) * 50;
-		pl1.y = (e.getY() / 50) * 50;
-		moveDots.x = (e.getX() / 50) * 50;
-		moveDots.y = (e.getY() / 50) * 50;
+		
+		
 		for (int i = 0; i < 5; i++) {
 			// System.out.println(gameObject.xcords.get(i));
 		}
@@ -103,7 +92,23 @@ public class Control implements ActionListener, KeyListener, MouseListener {
 	@Override
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
+mouseX = e.getX();
+		mouseY = e.getY();
+		System.out.println("Click X = " + e.getX() + " Click Y = " + e.getY());
+		System.out.println("RandomX = " + GamePanel.randx + " RandomY = " + GamePanel.randy);
 
+		if (e.getX() > (GamePanel.randx / 50) * 50 && e.getX() < ((GamePanel.randx / 50) * 50) + 50
+				&& e.getY() > (GamePanel.randy / 50) * 50 && e.getY() < ((GamePanel.randy / 50) * 50) + 50) {
+			System.out.println("AstroidClick");
+		}
+		if (e.getX()<pl1.x+250 && e.getX()>pl1.x-250){
+			if (e.getY()<pl1.y+250&& e.getY()>pl1.y-250){
+				pl1.x = (e.getX() / 50) * 50;
+				pl1.y = (e.getY() / 50) * 50;
+				moveDots.x = (e.getX() / 50) * 50;
+				moveDots.y = (e.getY() / 50) * 50;
+			}
+		}
 	}
 
 	@Override

@@ -27,7 +27,7 @@ public class PlanataryAnilation {
 
 	void setup() {
 		main.addKeyListener(control);
-		main.addMouseListener(control);
+		gPanel.addMouseListener(control);
 		main.add(gPanel);
 		main.setVisible(true);
 
