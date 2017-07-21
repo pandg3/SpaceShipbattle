@@ -11,37 +11,38 @@ import javax.swing.JPanel;
 public class GamePanel extends JPanel {
 	final int MENU_STATE = 0;
 	final int GAME_STATE = 1;
-	final int END_STATE = 2;
+	final int END_STATE = 5;
 	int currentState;
 	Control control;
 	gameObject gameObject;
 	PL1 pl1;
 	Planet1 planet1;
 	PL2 pl2;
-	Planet2 planet2;
+	Planet1 planet2;
 	GamePanel gamepanel;
 	Grid grid;
 	Movement_Dots moveDots;
 	astroidGen astroid;
-	Selection_box select;
+	
 	public static BufferedImage rocketImg;
 
 	static int randx = new Random().nextInt(1850);
 	static int randy = new Random().nextInt(825);
 
 	public GamePanel(Control control) {
+		
 		System.out.println((randx / 50) * 50);
 		System.out.println((randy / 50) * 50);
 		gameObject = new gameObject();
 		this.control = control;
 		pl1 = new PL1(150, 50, 50, 50, 1);
-		planet1 = new Planet1(50, 50, 50, 50, 2);
+		planet1 = new Planet1(50, 50, 50, 50, 2, 10, 50);
 		pl2 = new PL2(1650, 800, 50, 50, 3);
-		planet2 = new Planet2(1750, 800, 50, 50, 4);
+		planet2 = new Planet1(1750, 800, 50, 50, 4, 10, 50);
 		moveDots = new Movement_Dots(150, 50, 50, 50, 6);
 		grid = new Grid(0, 0, 50, 50, 5);
 		astroid = new astroidGen((randx / 50) * 50, (randy / 50) * 50, 50, 50, 7);
-		select = new Selection_box(control.getmouseX(), control.mouseY, 50, 50, 8);
+		
 		try {
 
 			rocketImg = ImageIO.read(this.getClass().getResourceAsStream("HYPEROCKET0.png"));
@@ -66,7 +67,7 @@ public class GamePanel extends JPanel {
 	}
 
 	public void paintComponent(Graphics g) {
-
+		
 		gameObject.draw(g);
 		pl1.draw(g);
 		planet1.draw(g);
@@ -75,7 +76,7 @@ public class GamePanel extends JPanel {
 		grid.draw(g);
 		moveDots.draw(g);
 		astroid.draw(g);
-		select.draw(g);
+		
 		repaint();
 
 	}

@@ -21,7 +21,7 @@ public class PlanataryAnilation {
 		main = new JFrame();
 		control = new Control();
 		gPanel = new GamePanel(control);
-
+		
 		setup();
 	}
 

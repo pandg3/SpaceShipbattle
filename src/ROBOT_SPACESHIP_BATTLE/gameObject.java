@@ -2,9 +2,11 @@ package ROBOT_SPACESHIP_BATTLE;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Rectangle;
 import java.util.ArrayList;
 
 public class gameObject {
+	boolean isAlive = true;
 	int x;
 	int y;
 	int width;
@@ -14,11 +16,17 @@ public class gameObject {
 	int yG = 0;
 	int xM;
 	int yM;
-	ArrayList<Integer> xcords = new ArrayList<Integer>();
-	ArrayList<Integer> ycords = new ArrayList<Integer>();
-
+	int resourceVal;
+	int resourceNodes;
+	int usedResourceNodes;
+	int totalResources = 0;
+	Rectangle collisionBox;
 	public gameObject() {
-
+		this.x = x;
+		this.y = y;
+		this.width = width;
+		this.height = height;
+		collisionBox = new Rectangle(x, y, width, height);
 	}
 
 	// public ArrayList<Integer> getarray() {
@@ -30,6 +38,7 @@ public class gameObject {
 	}
 
 	void draw(Graphics g) {
+		g.drawString(Integer.toString(totalResources), 50, 50);
 		if (img == 1) {
 			g.drawImage(GamePanel.rocketImg, x, y, width, height, null);
 			// g.setColor(Color.green.GREEN);
@@ -83,7 +92,7 @@ public class gameObject {
 			}
 
 		} else if (img == 7) {
-			g.setColor(Color.YELLOW);
+			g.setColor(Color.gray);
 			g.fillRect(x, y, width, height);
 		} else if (img == 8) {
 			g.setColor(Color.GRAY);
