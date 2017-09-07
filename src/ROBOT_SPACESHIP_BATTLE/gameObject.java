@@ -21,6 +21,7 @@ public class gameObject {
 	int usedResourceNodes;
 	int totalResources = 0;
 	Rectangle collisionBox;
+	ObjectManager manager = new ObjectManager();
 	public gameObject() {
 		this.x = x;
 		this.y = y;
@@ -38,7 +39,8 @@ public class gameObject {
 	}
 
 	void draw(Graphics g) {
-		g.drawString(Integer.toString(totalResources), 50, 50);
+		
+		g.drawString(Integer.toString(Control.objMan.getMiners()), 40, 50);
 		if (img == 1) {
 			g.drawImage(GamePanel.rocketImg, x, y, width, height, null);
 			// g.setColor(Color.green.GREEN);

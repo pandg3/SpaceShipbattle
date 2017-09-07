@@ -7,7 +7,7 @@ import java.util.Random;
 public class ObjectManager {
 	ArrayList<gameObject> objects;
 
-	private int score = 0;
+	private int miners = 0;
 
 	long enemyTimer = 0;
 	int enemySpawnTime = 1000;
@@ -75,12 +75,12 @@ public class ObjectManager {
 //	 }
 //	 }
 
-	public int getScore() {
-		return score;
+	public int getMiners() {
+		return miners;
 	}
 
-	public void setScore(int s) {
-		score = s;
+	public void setMiners(int m) {
+		miners = m;
 	}
 
 	public void reset() {

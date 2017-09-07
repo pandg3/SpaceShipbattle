@@ -17,7 +17,7 @@ public class Control implements ActionListener, KeyListener, MouseListener {
 	Timer timer;
 	int mouseX;
 	int mouseY;
-
+	static ObjectManager objMan = new ObjectManager();
 	public void actionPerformed(ActionEvent e) {
 
 		gameObject.update();
@@ -86,20 +86,23 @@ public class Control implements ActionListener, KeyListener, MouseListener {
 	@Override
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
-
+System.out.println("hyjhyjyj");
 	}
 
 	@Override
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
+		
 mouseX = e.getX();
 		mouseY = e.getY();
 		System.out.println("Click X = " + e.getX() + " Click Y = " + e.getY());
 		System.out.println("RandomX = " + GamePanel.randx + " RandomY = " + GamePanel.randy);
-
+		System.out.println(objMan.getMiners());
 		if (e.getX() > (GamePanel.randx / 50) * 50 && e.getX() < ((GamePanel.randx / 50) * 50) + 50
 				&& e.getY() > (GamePanel.randy / 50) * 50 && e.getY() < ((GamePanel.randy / 50) * 50) + 50) {
 			System.out.println("AstroidClick");
+			objMan.setMiners(objMan.getMiners()+1);
+			System.out.println(objMan.getMiners());
 		}
 		if (e.getX()<pl1.x+250 && e.getX()>pl1.x-250){
 			if (e.getY()<pl1.y+250&& e.getY()>pl1.y-250){

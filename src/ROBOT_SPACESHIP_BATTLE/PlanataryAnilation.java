@@ -10,7 +10,7 @@ public class PlanataryAnilation {
 	GamePanel gPanel;
 	JFrame main;
 
-	Control control;
+	 Control control;
 
 	public static void main(String[] args) {
 		PlanataryAnilation RO = new PlanataryAnilation();
@@ -27,7 +27,7 @@ public class PlanataryAnilation {
 
 	void setup() {
 		main.addKeyListener(control);
-		gPanel.addMouseListener(control);
+		main.addMouseListener(gPanel.control);
 		main.add(gPanel);
 		main.setVisible(true);
 
