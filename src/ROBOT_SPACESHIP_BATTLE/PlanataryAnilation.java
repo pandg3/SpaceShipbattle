@@ -6,7 +6,7 @@ public class PlanataryAnilation {
 	static PlanataryAnilation RO;
 	static final int gWidth = 1900;
 	static final int gHight = 925;
-
+	String www= "wow";
 	GamePanel gPanel;
 	JFrame main;
 
@@ -14,7 +14,7 @@ public class PlanataryAnilation {
 
 	public static void main(String[] args) {
 		PlanataryAnilation RO = new PlanataryAnilation();
-		RO.setup();
+		
 	}
 
 	public PlanataryAnilation() {
@@ -27,7 +27,7 @@ public class PlanataryAnilation {
 
 	void setup() {
 		main.addKeyListener(control);
-		main.addMouseListener(gPanel.control);
+		gPanel.addMouseListener(gPanel.control);
 		main.add(gPanel);
 		main.setVisible(true);
 
