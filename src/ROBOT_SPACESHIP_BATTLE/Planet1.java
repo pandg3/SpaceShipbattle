@@ -1,5 +1,8 @@
 package ROBOT_SPACESHIP_BATTLE;
 
+import java.awt.Color;
+import java.awt.Graphics;
+
 public class Planet1 extends gameObject {
 	
 
@@ -12,5 +15,15 @@ public class Planet1 extends gameObject {
 		this.resourceVal = resourceVal;
 		this.resourceNodes = resourceNodes;
 	}
+public void draw(Graphics g) {
+	if (img==1) {
+		g.setColor(Color.blue.BLUE);
+	g.fillRect(x, y, width, height);
+	}
+	if (img==4) {
+		
+	}
 
+}
+	
 }

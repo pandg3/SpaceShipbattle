@@ -1,14 +1,18 @@
 package ROBOT_SPACESHIP_BATTLE;
 
+import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.Random;
 
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
+import javax.swing.Timer;
 
-public class GamePanel extends JPanel {
+public class GamePanel extends JPanel implements ActionListener {
 	final int MENU_STATE = 0;
 	final int GAME_STATE = 1;
 	final int END_STATE = 5;
@@ -23,24 +27,24 @@ public class GamePanel extends JPanel {
 	Grid grid;
 	Movement_Dots moveDots;
 	astroidGen astroid;
-	
+	Timer timer;
 	public static BufferedImage rocketImg;
 
 	static int randx = new Random().nextInt(1850);
 	static int randy = new Random().nextInt(825);
-
+	
 	public GamePanel(Control control) {
-		
+		timer = new Timer(1000 / 60, this);
 		System.out.println((randx / 50) * 50);
 		System.out.println((randy / 50) * 50);
 		gameObject = new gameObject();
 		this.control = control;
-		pl1 = new PL1(150, 50, 50, 50, 1);
-		planet1 = new Planet1(50, 50, 50, 50, 2, 10, 50);
+		pl1 = new PL1(150, 50, 50, 50);
+		planet1 = new Planet1(50, 50, 50, 50, 1, 10, 50);
 		pl2 = new PL2(1650, 800, 50, 50, 3);
 		planet2 = new Planet1(1750, 800, 50, 50, 4, 10, 50);
 		moveDots = new Movement_Dots(150, 50, 50, 50, 6);
-		grid = new Grid(0, 0, 50, 50, 5);
+		grid = new Grid(0, 0, 50, 50);
 		astroid = new astroidGen((randx / 50) * 50, (randy / 50) * 50, 50, 50, 7);
 		
 		try {
@@ -54,6 +58,12 @@ public class GamePanel extends JPanel {
 
 	}
 
+	void startGame() {
+		control.startGame(this);
+		timer.start();
+		
+		
+	}
 	public Movement_Dots getmoveDots() {
 		return moveDots;
 	}
@@ -71,14 +81,25 @@ public class GamePanel extends JPanel {
 		gameObject.draw(g);
 		pl1.draw(g);
 		planet1.draw(g);
-		pl2.draw(g);
-		planet2.draw(g);
-		grid.draw(g);
-		moveDots.draw(g);
-		astroid.draw(g);
-		
-		repaint();
+//		pl2.draw(g);
 
+		grid.draw(g);
+//		moveDots.draw(g);
+//		astroid.draw(g);
+		
+		//repaint();
+
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		
+
+			gameObject.update();
+			pl1.update();
+			moveDots.update();
+			repaint();
+		
 	}
 
 }

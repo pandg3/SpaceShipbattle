@@ -1,5 +1,7 @@
 package ROBOT_SPACESHIP_BATTLE;
 
+import java.awt.Graphics;
+
 public class Movement_Dots extends gameObject {
 	public Movement_Dots(int x, int y, int width, int height, int img) {
 
@@ -10,5 +12,7 @@ public class Movement_Dots extends gameObject {
 		this.img = img;
 
 	}
-
+public void draw(Graphics g) {
+		
+	}
 }

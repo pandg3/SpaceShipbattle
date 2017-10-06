@@ -19,7 +19,8 @@ public class gameObject {
 	int resourceVal;
 	int resourceNodes;
 	int usedResourceNodes;
-	int totalResources = 0;
+	double totalResources;
+	int totalResourcesRounded;
 	Rectangle collisionBox;
 	ObjectManager manager = new ObjectManager();
 	public gameObject() {
@@ -35,15 +36,17 @@ public class gameObject {
 	// }
 
 	void update() {
-
+		totalResources =totalResources+Control.objMan.getMiners() *0.02;
+//		System.out.println(totalResources);
+		totalResourcesRounded= (int) Math.round(totalResources);
 	}
-
 	void draw(Graphics g) {
-		
-		g.drawString(Integer.toString(Control.objMan.getMiners()), 40, 50);
+		g.setColor(Color.BLUE);
+		g.drawString("miners: " + Integer.toString(Control.objMan.getMiners()), 40, 50);
+		g.drawString("Minerals: "+ totalResourcesRounded, 150, 50);
 		if (img == 1) {
 			g.drawImage(GamePanel.rocketImg, x, y, width, height, null);
-			// g.setColor(Color.green.GREEN);
+			 //g.setColor(Color.green.GREEN);
 			// g.fillRect(x, y, width, height);
 		} else if (img == 2) {
 			g.setColor(Color.blue.BLUE);

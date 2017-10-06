@@ -9,7 +9,7 @@ import java.awt.event.MouseListener;
 
 import javax.swing.Timer;
 
-public class Control implements ActionListener, KeyListener, MouseListener {
+public class Control implements KeyListener, MouseListener {
 	Movement_Dots moveDots;
 	PL1 pl1;
 	Planet1 planet1;
@@ -18,24 +18,17 @@ public class Control implements ActionListener, KeyListener, MouseListener {
 	int mouseX;
 	int mouseY;
 	static ObjectManager objMan = new ObjectManager();
-	public void actionPerformed(ActionEvent e) {
-
-		gameObject.update();
-		pl1.update();
-		moveDots.update();
-	}
-
-	public Control() {
-		timer = new Timer(1000 / 60, this);
-	}
-
+	
 	void startGame(GamePanel gPanel) {
-		timer.start();
+		
 		pl1 = gPanel.getPl1();
 		gameObject = gPanel.getGameObject();
 		moveDots = gPanel.getmoveDots();
 
 	}
+	
+
+	
 
 	@Override
 	public void keyTyped(KeyEvent e) {
