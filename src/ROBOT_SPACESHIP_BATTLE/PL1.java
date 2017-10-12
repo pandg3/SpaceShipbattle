@@ -1,5 +1,6 @@
 package ROBOT_SPACESHIP_BATTLE;
 
+import java.awt.Color;
 import java.awt.Graphics;
 
 public class PL1 extends gameObject {
@@ -18,6 +19,7 @@ public class PL1 extends gameObject {
 	}
 public void draw(Graphics g) {
 		g.drawImage(GamePanel.rocketImg, x, y, width, height, null);
+		
 	}
 
 	

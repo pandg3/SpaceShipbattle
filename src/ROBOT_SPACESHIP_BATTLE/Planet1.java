@@ -21,7 +21,8 @@ public void draw(Graphics g) {
 	g.fillRect(x, y, width, height);
 	}
 	if (img==4) {
-		
+		g.setColor(Color.RED);
+		g.fillRect(x, y, width, height);
 	}
 
 }

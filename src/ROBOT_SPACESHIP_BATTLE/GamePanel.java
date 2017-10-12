@@ -41,9 +41,9 @@ public class GamePanel extends JPanel implements ActionListener {
 		this.control = control;
 		pl1 = new PL1(150, 50, 50, 50);
 		planet1 = new Planet1(50, 50, 50, 50, 1, 10, 50);
-		pl2 = new PL2(1650, 800, 50, 50, 3);
+		pl2 = new PL2(1650, 800, 50, 50);
 		planet2 = new Planet1(1750, 800, 50, 50, 4, 10, 50);
-		moveDots = new Movement_Dots(150, 50, 50, 50, 6);
+		moveDots = new Movement_Dots(150, 50, 50, 50);
 		grid = new Grid(0, 0, 50, 50);
 		astroid = new astroidGen((randx / 50) * 50, (randy / 50) * 50, 50, 50, 7);
 		
@@ -81,13 +81,13 @@ public class GamePanel extends JPanel implements ActionListener {
 		gameObject.draw(g);
 		pl1.draw(g);
 		planet1.draw(g);
-//		pl2.draw(g);
-
+		pl2.draw(g);
+		planet2.draw(g);
 		grid.draw(g);
-//		moveDots.draw(g);
-//		astroid.draw(g);
+		moveDots.draw(g);
+		astroid.draw(g);
 		
-		//repaint();
+		repaint();
 
 	}
 
