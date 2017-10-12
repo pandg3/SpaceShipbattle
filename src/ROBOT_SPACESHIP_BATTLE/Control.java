@@ -71,9 +71,7 @@ public class Control implements KeyListener, MouseListener {
 		// TODO Auto-generated method stub
 		
 		
-		for (int i = 0; i < 5; i++) {
-			// System.out.println(gameObject.xcords.get(i));
-		}
+		
 	}
 
 	@Override
@@ -90,12 +88,12 @@ mouseX = e.getX();
 		mouseY = e.getY();
 		System.out.println("Click X = " + e.getX() + " Click Y = " + e.getY());
 		System.out.println("RandomX = " + GamePanel.randx + " RandomY = " + GamePanel.randy);
-		System.out.println(objMan.getMiners());
+		System.out.println(objMan.getPl1Miners());
 		if (e.getX() > (GamePanel.randx / 50) * 50 && e.getX() < ((GamePanel.randx / 50) * 50) + 50
 				&& e.getY() > (GamePanel.randy / 50) * 50 && e.getY() < ((GamePanel.randy / 50) * 50) + 50) {
 			System.out.println("AstroidClick");
-			objMan.setMiners(objMan.getMiners()+1);
-			System.out.println(objMan.getMiners());
+			objMan.setPl1Miners(objMan.getPl1Miners()+1);
+			System.out.println(objMan.getPl1Miners());
 		}
 		if (e.getX()<pl1.x+250 && e.getX()>pl1.x-250){
 			if (e.getY()<pl1.y+250&& e.getY()>pl1.y-250){

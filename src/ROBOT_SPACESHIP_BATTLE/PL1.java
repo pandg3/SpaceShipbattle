@@ -25,18 +25,7 @@ public void draw(Graphics g) {
 	
 	@Override
 	void update() {
-		// TODO Auto-generated method stub
-		/*
-		 * if (right){ x+=5; System.out.println("Right"); right = false;
-		 * 
-		 * } if (left){ x-=5; System.out.println("left"); left = false;
-		 * 
-		 * } if (up){ y-=5; System.out.println("Up"); up = false;
-		 * 
-		 * } if (down){ y+=5; System.out.println("Down"); down = false;
-		 * 
-		 * }
-		 */
+	
 
 	}
 }

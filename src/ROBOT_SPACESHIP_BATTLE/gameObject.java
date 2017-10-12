@@ -36,14 +36,15 @@ public class gameObject {
 	// }
 
 	void update() {
-		totalResources =totalResources+Control.objMan.getMiners() *0.02;
+		totalResources =totalResources+Control.objMan.getPl1Miners() *0.02;
 //		System.out.println(totalResources);
 		totalResourcesRounded= (int) Math.round(totalResources);
 	}
 	void draw(Graphics g) {
+		g.drawImage(GamePanel.oreSign, 150, 0, 125, 75, null);
 		g.setColor(Color.BLUE);
-		g.drawString("miners: " + Integer.toString(Control.objMan.getMiners()), 40, 50);
-		g.drawString("Minerals: "+ totalResourcesRounded, 150, 50);
+		g.drawString("miners: " + Integer.toString(Control.objMan.getPl1Miners()), 40, 50);
+		g.drawString("Minerals: "+ totalResourcesRounded, 165, 45);
 		
 	}
 

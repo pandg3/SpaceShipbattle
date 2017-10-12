@@ -6,8 +6,9 @@ import java.util.Random;
 
 public class ObjectManager {
 	ArrayList<gameObject> objects;
-
-	private int miners = 0;
+	
+	private int pl1miners = 0;
+	private int pl2miners = 0;
 
 	long enemyTimer = 0;
 	int enemySpawnTime = 1000;
@@ -75,14 +76,27 @@ public class ObjectManager {
 //	 }
 //	 }
 
-	public int getMiners() {
-		return miners;
+	//Pl1 Mining System
+	public int getPl1Miners() {
+		return pl1miners;
 	}
 
-	public void setMiners(int m) {
-		miners = m;
+	public void setPl1Miners(int m) {
+		pl1miners = m;
+	}
+	
+	//PL2 Mining System
+	public int getPl2Miners() {
+		return pl1miners;
 	}
 
+	public void setPl2Miners(int m) {
+		pl1miners = m;
+	}
+
+	
+	
+	
 	public void reset() {
 		objects.clear();
 	}
