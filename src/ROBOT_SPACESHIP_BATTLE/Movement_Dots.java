@@ -10,7 +10,7 @@ public class Movement_Dots extends gameObject {
 		this.y = y;
 		this.width = width;
 		this.height = height;
-		this.img = img;
+	
 
 	}
 public void draw(Graphics g) {

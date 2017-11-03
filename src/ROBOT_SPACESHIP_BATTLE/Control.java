@@ -40,20 +40,11 @@ public class Control implements KeyListener, MouseListener {
 	@Override
 	public void keyPressed(KeyEvent e) {
 
-		System.out.println("Pressed");
-		/*
-		 * System.out.println(e.getKeyCode()); if (e.getKeyCode() ==
-		 * KeyEvent.VK_RIGHT) { PL1.right = true;
-		 * 
-		 * } if (e.getKeyCode() == KeyEvent.VK_LEFT) { PL1.left = true;
-		 * 
-		 * } if (e.getKeyCode() == KeyEvent.VK_UP) { PL1.up = true;
-		 * 
-		 * } if (e.getKeyCode() == KeyEvent.VK_DOWN) { PL1.down = true;
-		 * 
-		 * }
-		 */
-	}
+	
+		 
+		 } 
+		 
+	
 
 	public int getmouseX() {
 		return mouseX;
@@ -77,7 +68,7 @@ public class Control implements KeyListener, MouseListener {
 	@Override
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
-System.out.println("hyjhyjyj");
+
 	}
 
 	@Override
@@ -89,12 +80,25 @@ mouseX = e.getX();
 		System.out.println("Click X = " + e.getX() + " Click Y = " + e.getY());
 		System.out.println("RandomX = " + GamePanel.randx + " RandomY = " + GamePanel.randy);
 		System.out.println(objMan.getPl1Miners());
+		
 		if (e.getX() > (GamePanel.randx / 50) * 50 && e.getX() < ((GamePanel.randx / 50) * 50) + 50
-				&& e.getY() > (GamePanel.randy / 50) * 50 && e.getY() < ((GamePanel.randy / 50) * 50) + 50) {
-			System.out.println("AstroidClick");
-			objMan.setPl1Miners(objMan.getPl1Miners()+1);
-			System.out.println(objMan.getPl1Miners());
+			&& e.getY() > (GamePanel.randy / 50) * 50 && e.getY() < ((GamePanel.randy / 50) * 50) + 50) 
+		{
+				gameObject.manager.setInfoVisable(1);
+				System.out.println(gameObject.manager.getInfoVisable());
+				
+				/*if (objMan.getMinerCost()<objMan.getPl1minerals()) 
+				{
+					objMan.setPl1minerals(objMan.getPl1minerals()-objMan.getMinerCost());
+					objMan.setPl1Miners(objMan.getPl1Miners()+1);
+					System.out.println(objMan.getPl1Miners());	
+				}*/
+			
+			
 		}
+		
+			
+		
 		if (e.getX()<pl1.x+250 && e.getX()>pl1.x-250){
 			if (e.getY()<pl1.y+250&& e.getY()>pl1.y-250){
 				pl1.x = (e.getX() / 50) * 50;

@@ -31,20 +31,17 @@ public class gameObject {
 		collisionBox = new Rectangle(x, y, width, height);
 	}
 
-	// public ArrayList<Integer> getarray() {
-	// return xcords;
-	// }
+
 
 	void update() {
-		totalResources =totalResources+Control.objMan.getPl1Miners() *0.02;
-//		System.out.println(totalResources);
-		totalResourcesRounded= (int) Math.round(totalResources);
+
+		Control.objMan.clock();
 	}
 	void draw(Graphics g) {
 		g.drawImage(GamePanel.oreSign, 150, 0, 125, 75, null);
 		g.setColor(Color.BLUE);
 		g.drawString("miners: " + Integer.toString(Control.objMan.getPl1Miners()), 40, 50);
-		g.drawString("Minerals: "+ totalResourcesRounded, 165, 45);
+		g.drawString("Minerals: "+ Control.objMan.getPl1minerals(), 165, 45);
 		
 	}
 

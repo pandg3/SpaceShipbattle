@@ -28,7 +28,7 @@ public class GamePanel extends JPanel implements ActionListener {
 	Movement_Dots moveDots;
 	astroidGen astroid;
 	Timer timer;
-	
+	informationBox infoBox;
 	//images
 	public static BufferedImage oreSign;
 	public static BufferedImage rocketImg;
@@ -49,7 +49,7 @@ public class GamePanel extends JPanel implements ActionListener {
 		moveDots = new Movement_Dots(150, 50, 50, 50);
 		grid = new Grid(0, 0, 50, 50);
 		astroid = new astroidGen((randx / 50) * 50, (randy / 50) * 50, 50, 50, 7);
-		
+		infoBox = new informationBox(0, 600, 150, 300);
 		try {
 			oreSign = ImageIO.read(this.getClass().getResourceAsStream("ORE_SIGN.png"));
 			rocketImg = ImageIO.read(this.getClass().getResourceAsStream("HYPEROCKET0.png"));
@@ -90,6 +90,7 @@ public class GamePanel extends JPanel implements ActionListener {
 		moveDots.draw(g);
 		astroid.draw(g);
 		gameObject.draw(g);
+		infoBox.draw(g);
 		repaint();
 
 	}

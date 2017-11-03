@@ -6,13 +6,12 @@ import java.util.Random;
 
 public class ObjectManager {
 	ArrayList<gameObject> objects;
-	
-	private int pl1miners = 0;
+	int isInfoVisable = 0 ;
+	private int pl1miners = 5;
 	private int pl2miners = 0;
-
-	long enemyTimer = 0;
-	int enemySpawnTime = 1000;
-
+	private int minerCost = 10;
+	private double pl1totalMinerals = 0;
+	private int pl1totalMineralsRounded;
 	public ObjectManager() {
 		objects = new ArrayList<gameObject>();
 	}
@@ -22,6 +21,7 @@ public class ObjectManager {
 	}
 
 	public void update() {
+		
 		for (int i = 0; i < objects.size(); i++) {
 			gameObject o = objects.get(i);
 			o.update();
@@ -29,7 +29,10 @@ public class ObjectManager {
 
 		purgeObjects();
 	}
-
+	public void clock() {
+		pl1totalMinerals =pl1totalMinerals+getPl1Miners() *0.02;
+		pl1totalMineralsRounded= (int) Math.round(pl1totalMinerals);
+	}
 	public void draw(Graphics g) {
 		for (int i = 0; i < objects.size(); i++) {
 			gameObject o = objects.get(i);
@@ -85,16 +88,36 @@ public class ObjectManager {
 		pl1miners = m;
 	}
 	
+	public int getPl1minerals() {
+		return pl1totalMineralsRounded;
+	}
+	public void setPl1minerals(int m) {
+		pl1totalMinerals = m;
+	}
+	
 	//PL2 Mining System
 	public int getPl2Miners() {
-		return pl1miners;
+		return pl2miners;
 	}
 
 	public void setPl2Miners(int m) {
-		pl1miners = m;
+		pl2miners = m;
 	}
-
 	
+	
+	
+	public int getMinerCost() {
+		return minerCost;
+	}
+	
+	public void setInfoVisable(int m) {
+		isInfoVisable = m;
+		System.out.println(isInfoVisable);
+	}
+	public int getInfoVisable() {
+		return isInfoVisable;
+		
+	}
 	
 	
 	public void reset() {
